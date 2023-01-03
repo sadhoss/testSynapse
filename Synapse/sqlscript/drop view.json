@@ -1,0 +1,17 @@
+{
+	"name": "drop view",
+	"properties": {
+		"content": {
+			"query": "DROP VIEW populationView",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "deleteme",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "create view on top of flat files",
+	"properties": {
+		"content": {
+			"query": "-- This is auto-generated code\nUSE deleteme;\nGO\n\nDROP VIEW IF EXISTS abc;\nGO\n\nCREATE VIEW abc AS\n\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://adlssh.dfs.core.windows.net/incdatarefresh/dst/test.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        FIELDTERMINATOR =',',\n        HEADER_ROW = True\n    ) AS [result]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "deleteme",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
